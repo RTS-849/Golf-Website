@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lilita One', sans-serif;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Ubuntu+Condensed&display=swap');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#cursor {
+    height: 30px;
+    width: 30px;
+    background-color: #0f0cd1;
+    border-radius: 50%;
+    z-index: 99;
+    position: fixed;
+}
+
+#cursor-blur {
+    height: 500px;
+    width: 500px;
+    background-color: #2926cc4f;
+    border-radius: 50%;
+    z-index: 9;
+    position: fixed;
+    filter: blur(40px);
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 140px;
+    width: 100%;
+    position: fixed;
+    padding: 0px 150px;
+    gap: 45px;
+    z-index: 99;
+
+}
+
+#nav img {
+    width: 100px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgb(0, 0, 0, 0.38);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 135px;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: 'EAT. DRINK. PLAY';
+    position: absolute;
+    color: black;
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 1px #87ceeb;
+    z-index: -1;
+}
+
+#page1 h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#page1 p {
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    width: 40%;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller-in {
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#scroller h4 {
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 10px;
+    color: transparent;
+    transition: all linear 0.5s;
+    -webkit-text-stroke: 2px #0f0cd1;
+}
+
+#scroller h4:hover {
+    color: #0f0cd1;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+#about-us {
+    height: 40vh;
+    width: 100%;
+    justify-content: space-around;
+    padding:50px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+#about-us img{
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#about-us-in{
+      width: 40%;
+      text-align: center;
+}
+#about-us-in h3{
+      font-size: 54px;
+      font-weight: 600;
+      margin-bottom: 50px;
+}
+#about-us-in p{
+      font-size: 16px;
+      line-height: 26px;
+}
+
+#card-container{
+    /* background-color: red; */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+.card{
+    height: 80%;
+    width: 24%;
+    background-color: blue;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: cover;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card-1{
+    background-image: url("../Img/card-1.jpg");
+}
+#card-2{
+    background-image: url('../Img/card2.webp');
+}
+#card-3{
+    background-image: url('../Img/pic-4f.jpg');
+}
+.overlay{
+       width: 100%;
+       height: 100%;
+       background-color: #0f0cd1;
+       padding: 10PX;
+       padding-top: 85px;
+       opacity: 0;
+       transition: all ease 0.6s;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.overlay h4{
+      color: black;
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: 800;
+      white-space: nowrap;
+      margin-bottom: 20px;
+}
+.overlay p{
+      color: black;
+      font-size: 18px;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+#blue-div{
+    display: flex;
+    height: 35vh;
+    align-items: center;
+    background: linear-gradient(to left bottom,rgb(23, 238, 16),#0f0cd1);
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#blue-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+
+#blue-div H4{
+    width: 45%;
+    line-height: 50px;
+    font-size: 27px;
+    margin: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+}
+
+#page3{
+     height: 100vh;
+     width: 100%;
+     background-color: #000;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+}
+#page3>p{
+    font-size: 35px;
+    font-weight: 800;
+    width: 60%;
+    text-align: center;
+    line-height: 40px;
+}
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+
+#page3 #colon-1{
+    left: 15%;
+    top: 25%;
+}
+#page3 #colon-2{
+    right: 16%;
+    bottom: 25%;
+}
